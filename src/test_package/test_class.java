@@ -1,9 +1,6 @@
 package test_package;
 
-
-import java.io.IOException;
 import java.util.Scanner;
-
 
 //class for running overall main method and testing all other classes in package
 public class test_class {
@@ -18,19 +15,14 @@ public class test_class {
 		
 		//create a field 
 		Field field_test = new Field(5,5);
-		field_test.printDimensions();
-		field_test.changeFieldValue(0, 0, 1);
-		field_test.printDimensions();
-		field_test.changeFieldValue(0, 1, 1);
-		field_test.changeFieldValue(4,4,2);
-		field_test.changeFieldValue(3,4,5);
-		field_test.printDimensions();
 		
 		//main loop
 		boolean run;
 		run = true;
 		String command;
+		int x,y,growitem;
 		while (run == true){
+			field_test.printDimensions();
 			System.out.print("> ");
 			command = reader.next();
 			System.out.println("You typed: '" + command + "'");
@@ -38,7 +30,18 @@ public class test_class {
 				System.out.println("Quitting...");
 				run = false;
 			}
+			if (command.equals("p")){
+				System.out.print("x? ");
+				x = reader.nextInt();
+				System.out.print("y? ");
+				y = reader.nextInt();
+				System.out.print("What are you planting? ");
+				growitem = reader.nextInt();
+				field_test.changeFieldValue(x, y, growitem);
+			}
 		}
+		
+		reader.close();
 		
 
 	}
