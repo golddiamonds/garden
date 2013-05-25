@@ -1,7 +1,8 @@
 package test_package;
 
 
-//import java.util.Scanner;
+import java.io.IOException;
+import java.util.Scanner;
 
 
 //class for running overall main method and testing all other classes in package
@@ -10,7 +11,7 @@ public class test_class {
 	//main
 	public static void main(String[] args) {
 		//String name;
-		//Scanner reader = new Scanner (System.in);
+		Scanner reader = new Scanner (System.in);
 		//System.out.println("Enter your name");
 		//name = reader.nextLine();
 		//System.out.println(name);
@@ -24,6 +25,21 @@ public class test_class {
 		field_test.changeFieldValue(4,4,2);
 		field_test.changeFieldValue(3,4,5);
 		field_test.printDimensions();
+		
+		//main loop
+		boolean run;
+		run = true;
+		String command;
+		while (run == true){
+			System.out.print("> ");
+			command = reader.next();
+			System.out.println("You typed: '" + command + "'");
+			if (command.equals("q")) {
+				System.out.println("Quitting...");
+				run = false;
+			}
+		}
+		
 
 	}
 
