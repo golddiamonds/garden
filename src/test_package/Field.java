@@ -6,6 +6,7 @@ public class Field {
 	//variables
 	public int width, height;
 	public int[][] fieldArray;
+	public GrowItem[][] growItemArray;
 	
 	
 	//main
@@ -26,6 +27,7 @@ public class Field {
 		this.width = width;
 		this.height = height;
 		this.fieldArray = new int[this.width][this.height];
+		this.growItemArray = new GrowItem[this.width][this.height];
 		this.generateField();
 	}
 	
@@ -70,12 +72,20 @@ public class Field {
 		if (this.fieldArray[x][y] == 0) {
 			
 			this.fieldArray[x][y] = value;
+			addGrowItem(x,y,"Tomato",1,30);
 			System.out.print("\nValue at x = " + x + " and y = " + y + " is now " + value + "\n");
+			System.out.print(this.growItemArray[x][y].name);
 			
 		} else {
 			
 			System.out.print("\nThere is already something there.\n");
 			
 		}
+	}
+	
+	private void addGrowItem(int x, int y, String name, int type, int maturity){
+		
+		this.growItemArray[x][y] = new GrowItem(name, type, maturity);
+		
 	}
 }
