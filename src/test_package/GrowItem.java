@@ -7,10 +7,6 @@ public class GrowItem {
 	public int maturity;
 	public int days;
 	
-
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		GrowItem grow_item_test = new GrowItem("Tomato", 1, 20);
 		grow_item_test.printGrowItem();

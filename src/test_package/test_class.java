@@ -39,11 +39,13 @@ public class test_class {
 				growitem = reader.nextInt();
 				field_test.changeFieldValue(x, y, growitem);
 			}
+			if (command.equals("h")){
+				System.out.println("q - quit");
+				System.out.println("p - plant");
+			}
 		}
 		
 		reader.close();
-		
-
+	
 	}
-
 }
