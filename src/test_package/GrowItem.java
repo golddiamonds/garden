@@ -13,6 +13,8 @@ public class GrowItem {
 
 	}
 	
+	public GrowItem(){}
+	
 	public GrowItem(String name, int type, int maturity){
 		this.name = name;
 		this.type = type;
@@ -26,3 +28,5 @@ public class GrowItem {
 	}
 
 }
+
+
